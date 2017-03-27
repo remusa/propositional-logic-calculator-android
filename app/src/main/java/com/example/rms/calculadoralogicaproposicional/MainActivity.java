@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -70,19 +71,17 @@ public class MainActivity extends AppCompatActivity {
 
                         System.out.println("NOCOLUMNAS: " + noColumnas);
                         System.out.println("NOFILAS: " + noFilas);
+                        System.out.println("VECTOR FINAL: " + vectorFinal.toString());
 
-
-                        for (int i = 0; i < noColumnas; i++) {
-
-                        }
+//                        for (int i = 0; i < noColumnas; i++) {
+//
+//                        }
 
 //                        for (int i = 0; i < vectorFinal.get(i).size(); i++) {
 //                            for (int j = 0; j < vectorFinal.size(); j++) {
 ////                                TableRow fila = new TableRow(vectorFinal.get(i).get(j));
 //                            }
 //                        }
-
-                        System.out.println("VECTOR FINAL: " + vectorFinal.toString());
                     } catch (IOException e) {
                         System.out.println("ERROR EVALUACIÓN: " + e.getMessage());
                     }
@@ -102,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
                     } catch (IOException e) {
                         System.out.println("ERROR POSTFIJO: " + e.getMessage());
                     }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Ingresa una proposición", Toast.LENGTH_SHORT).show();
                 }
 
             }
