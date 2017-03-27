@@ -81,8 +81,7 @@ public class Principal {
                 break;
         }
 
-//
-// model = new DefaultTableModel();
+//        model = new DefaultTableModel();
 //        for (int i = 0; i < Evaluacion.arrayTabla.size(); i++) {
 //            Object[] obj = Evaluacion.arrayTabla.get(i).toArray();
 //            model.addColumn(Evaluacion.columna.get(i), obj);

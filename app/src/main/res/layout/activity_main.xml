@@ -102,9 +102,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/btnEvaluar"
-        android:layout_below="@+id/etPostfijo">
+        android:layout_below="@+id/etPostfijo"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/btnEvaluar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -112,6 +112,7 @@
             android:orientation="vertical" >
 
             <TableLayout
+                android:id="@+id/tabla"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 

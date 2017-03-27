@@ -3,13 +3,17 @@ package com.example.rms.calculadoralogicaproposicional;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import Modelo.Evaluacion;
-import Modelo.Principal;
 
 import static Modelo.Principal.mostrarTablasVariables;
 import static Modelo.Principal.postfijo;
@@ -20,12 +24,17 @@ public class MainActivity extends AppCompatActivity {
     private EditText etTipo;
     private EditText etPostfijo;
     private Button btnEvaluar;
+    private TableLayout tabla;
+
+    private Adapter adapter;
 
     private String proposicion = "";
     private String tipoEvaluacion = "";
     private String postfijo = "";
+    private int noColumnas = 0;
+    private int noFilas = 0;
 
-    public static Object[] vecFinal;
+    private static ArrayList<ArrayList> vectorFinal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         etTipo = (EditText) findViewById(R.id.etTipo);
         etPostfijo = (EditText) findViewById(R.id.etPostfijo);
         btnEvaluar = (Button) findViewById(R.id.btnEvaluar);
+        tabla = (TableLayout) findViewById(R.id.tabla);
 
         btnEvaluar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +63,26 @@ public class MainActivity extends AppCompatActivity {
                     //Evaluación
                     try {
                         Evaluacion.evaluacionIniciar(proposicion);
-                        vecFinal = Principal.vectorVariables;
+                        vectorFinal = Evaluacion.arrayTabla;
+
+                        noColumnas = vectorFinal.size();
+                        noFilas = vectorFinal.get(0).size();
+
+                        System.out.println("NOCOLUMNAS: " + noColumnas);
+                        System.out.println("NOFILAS: " + noFilas);
+
+
+                        for (int i = 0; i < noColumnas; i++) {
+
+                        }
+
+//                        for (int i = 0; i < vectorFinal.get(i).size(); i++) {
+//                            for (int j = 0; j < vectorFinal.size(); j++) {
+////                                TableRow fila = new TableRow(vectorFinal.get(i).get(j));
+//                            }
+//                        }
+
+                        System.out.println("VECTOR FINAL: " + vectorFinal.toString());
                     } catch (IOException e) {
                         System.out.println("ERROR EVALUACIÓN: " + e.getMessage());
                     }
