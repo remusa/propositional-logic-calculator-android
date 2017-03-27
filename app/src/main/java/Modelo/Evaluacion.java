@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
-import Ordenamiento.Posfijo;
-
 /**
  * Created by rms on 27/03/2017.
  */
@@ -23,24 +21,6 @@ public class Evaluacion {
 
     public static ArrayList<Object> columna = new ArrayList<>();
     public static ArrayList<ArrayList> arrayTabla = new ArrayList<>();
-
-//    public static void main(String[] args) throws IOException {
-//        ArrayList<Character> x = new ArrayList<>();
-//        x.add('V');
-//        x.add('V');
-//        x.add('F');
-//        x.add('F');
-//
-//        ArrayList<Character> y = new ArrayList<>();
-//        y.add('V');
-//        y.add('F');
-//        y.add('V');
-//        y.add('F');
-//
-//        String propPrueba = "(P→Q^-R)↔((-P^-S)^R↔(P^-Q))^R→S";
-////        String propPrueba = "(P^Q)v(-Q^-P)";
-//        evaluacionIniciar("(P^Q)v(-Q^-P)");
-//    }
 
     /**
      Método para iniciar la evaluación, convierte una cadena con la proposición en postfijo,

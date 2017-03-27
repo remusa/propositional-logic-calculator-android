@@ -1,4 +1,4 @@
-package Ordenamiento;
+package Modelo;
 
 /**
  * Created by rms on 27/03/2017.

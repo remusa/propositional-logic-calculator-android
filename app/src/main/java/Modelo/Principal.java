@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import Ordenamiento.Posfijo;
-
 import static Modelo.Evaluacion.contarVariables;
 
 /**
@@ -59,7 +57,7 @@ public class Principal {
      Método para mostrar las tablas
      @param proposicion
      */
-    private static void mostrarTablasVariables(String proposicion) {
+    public static void mostrarTablasVariables(String proposicion) {
         noVar = contarVariables(proposicion);
 
         vectorVariables = Valores.iniciar(noVar);
