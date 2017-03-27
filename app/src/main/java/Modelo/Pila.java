@@ -40,8 +40,9 @@ public class Pila {
         }
 
     }
-    public boolean full(){//verifica si la pila esta llena
-        if(tope==arreglo.length-1)
+
+    public boolean full() {//verifica si la pila esta llena
+        if (tope == arreglo.length - 1)
             return true;
         else
             return false;

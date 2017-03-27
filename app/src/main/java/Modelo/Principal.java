@@ -54,8 +54,9 @@ public class Principal {
     }
 
     /**
-     Método para mostrar las tablas
-     @param proposicion
+     * Método para mostrar las tablas
+     *
+     * @param proposicion
      */
     public static void mostrarTablasVariables(String proposicion) {
         noVar = contarVariables(proposicion);

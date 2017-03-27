@@ -96,22 +96,6 @@ public class Evaluacion {
     }
 
     /**
-     Método para contar el número de variables (PQRSTU) y crear los arreglos correspondientes
-     @param proposicion
-     @return
-     */
-    public static int contarVariables(String proposicion) {
-        String prop = proposicion.replaceAll("[^A-Ua-uW-Zw-z]", "");
-
-        HashSet<Character> hash = new HashSet<>();
-        prop = prop.toUpperCase();
-        for (int i = 0; i < prop.length(); i++) {
-            hash.add(prop.charAt(i));
-        }
-        return hash.size();
-    }
-
-    /**
      Método para evaluar en su totalidad la proposición
      @param prop
      */
@@ -210,6 +194,22 @@ public class Evaluacion {
             return "Falacia/contradicción";
         }
         return "Contingencia";
+    }
+
+    /**
+     Método para contar el número de variables (PQRSTU) y crear los arreglos correspondientes
+     @param proposicion
+     @return
+     */
+    public static int contarVariables(String proposicion) {
+        String prop = proposicion.replaceAll("[^A-Ua-uW-Zw-z]", "");
+
+        HashSet<Character> hash = new HashSet<>();
+        prop = prop.toUpperCase();
+        for (int i = 0; i < prop.length(); i++) {
+            hash.add(prop.charAt(i));
+        }
+        return hash.size();
     }
 
 }

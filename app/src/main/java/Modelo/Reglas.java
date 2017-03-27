@@ -9,9 +9,10 @@ import java.util.ArrayList;
 public class Reglas {
 
     /**
-     Método para negar cada valor recibido en un ArrayList
-     @param x
-     @return
+     * Método para negar cada valor recibido en un ArrayList
+     *
+     * @param x
+     * @return
      */
     public static ArrayList<Character> negacion(ArrayList<Character> x) {
         ArrayList<Character> temp = new ArrayList<>();
@@ -26,10 +27,11 @@ public class Reglas {
     }
 
     /**
-     Método para evaluar la conjunción
-     @param x
-     @param y
-     @return
+     * Método para evaluar la conjunción
+     *
+     * @param x
+     * @param y
+     * @return
      */
     public static ArrayList<Character> conjuncion(ArrayList<Character> x, ArrayList<Character> y) {
         ArrayList<Character> temp = new ArrayList<>();
@@ -44,10 +46,11 @@ public class Reglas {
     }
 
     /**
-     Método para evaluar la disyunción
-     @param x
-     @param y
-     @return
+     * Método para evaluar la disyunción
+     *
+     * @param x
+     * @param y
+     * @return
      */
     public static ArrayList<Character> disyuncion(ArrayList<Character> x, ArrayList<Character> y) {
         ArrayList<Character> temp = new ArrayList<>();
@@ -62,10 +65,11 @@ public class Reglas {
     }
 
     /**
-     Método para evaluar la condicional
-     @param x
-     @param y
-     @return
+     * Método para evaluar la condicional
+     *
+     * @param x
+     * @param y
+     * @return
      */
     public static ArrayList<Character> condicional(ArrayList<Character> x, ArrayList<Character> y) {
         ArrayList<Character> temp = new ArrayList<>();
@@ -80,10 +84,11 @@ public class Reglas {
     }
 
     /**
-     Método para evaluar la bicondicional
-     @param x
-     @param y
-     @return
+     * Método para evaluar la bicondicional
+     *
+     * @param x
+     * @param y
+     * @return
      */
     public static ArrayList<Character> bicondicional(ArrayList<Character> x, ArrayList<Character> y) {
         ArrayList<Character> temp = new ArrayList<>();

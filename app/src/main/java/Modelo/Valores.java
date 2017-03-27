@@ -25,7 +25,7 @@ public class Valores {
     public static Object[] vectorVariables;
 
     /**
-     Método para limpiar los arreglos
+     * Método para limpiar los arreglos
      */
     private static void limpiar() {
         arrUno.clear();
@@ -37,8 +37,9 @@ public class Valores {
     }
 
     /**
-     Método para llenar arreglos dependiendo del número de variables seleccionadas (2^n)
-     @param noVar
+     * Método para llenar arreglos dependiendo del número de variables seleccionadas (2^n)
+     *
+     * @param noVar
      */
     private static void crearArreglos(int noVar) {
         limpiar();
@@ -99,9 +100,10 @@ public class Valores {
     }
 
     /**
-     Método para regresar arreglos creados (2^n) en un arreglo de objetos
-     @param noVar
-     @return
+     * Método para regresar arreglos creados (2^n) en un arreglo de objetos
+     *
+     * @param noVar
+     * @return
      */
     private static Object[] regresar(int noVar) {
         vectorVariables = new Object[noVar];
@@ -145,8 +147,9 @@ public class Valores {
     }
 
     /**
-     Método para imprimir arreglos creados
-     @param arr
+     * Método para imprimir arreglos creados
+     *
+     * @param arr
      */
     private static void imprimirArreglos(Object[] arr) {
         for (Object obj : arr) {
@@ -158,9 +161,10 @@ public class Valores {
     }
 
     /**
-     Método para iniciar
-     @param noVar
-     @return
+     * Método para iniciar
+     *
+     * @param noVar
+     * @return
      */
     public static Object[] iniciar(int noVar) {
         crearArreglos(noVar);

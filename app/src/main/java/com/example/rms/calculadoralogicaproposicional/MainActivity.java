@@ -9,6 +9,7 @@ import android.widget.EditText;
 import java.io.IOException;
 
 import Modelo.Evaluacion;
+import Modelo.Principal;
 
 import static Modelo.Principal.mostrarTablasVariables;
 import static Modelo.Principal.postfijo;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private String tipoEvaluacion = "";
     private String postfijo = "";
 
+    public static Object[] vecFinal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,35 +40,39 @@ public class MainActivity extends AppCompatActivity {
         btnEvaluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                proposicion = etProposicion.getText().toString();
 
-                //Tablas
-                try {
-                    mostrarTablasVariables(proposicion);
-                } catch (Exception e) {
-                    System.out.println("ERROR TABLA: " + e.getMessage());
-                }
-                //Evaluación
-                try {
-                    Evaluacion.evaluacionIniciar(proposicion);
-                } catch (IOException e) {
-                    System.out.println("ERROR EVALUACIÓN: " + e.getMessage());
-                }
-                //Tipo de evaluación
-                try {
-                    tipoEvaluacion = Evaluacion.evaluacionTipo();
-                    etTipo.setText(tipoEvaluacion);
-                    System.out.println("TIPO: " + tipoEvaluacion);
-                } catch (Exception e) {
-                    System.out.println("ERROR TIPO: " + e.getMessage());
-                }
-                //Postfijo
-                try {
-                    postfijo = postfijo(proposicion);
-                    etPostfijo.setText(postfijo);
-                    System.out.println("POSTFIJO: " + postfijo);
-                } catch (IOException e) {
-                    System.out.println("ERROR POSTFIJO: " + e.getMessage());
+                if (!etProposicion.getText().toString().equals("")) {
+                    proposicion = etProposicion.getText().toString();
+
+                    //Tablas
+                    try {
+                        mostrarTablasVariables(proposicion);
+                    } catch (Exception e) {
+                        System.out.println("ERROR TABLA: " + e.getMessage());
+                    }
+                    //Evaluación
+                    try {
+                        Evaluacion.evaluacionIniciar(proposicion);
+                        vecFinal = Principal.vectorVariables;
+                    } catch (IOException e) {
+                        System.out.println("ERROR EVALUACIÓN: " + e.getMessage());
+                    }
+                    //Tipo de evaluación
+                    try {
+                        tipoEvaluacion = Evaluacion.evaluacionTipo();
+                        etTipo.setText(tipoEvaluacion);
+                        System.out.println("TIPO: " + tipoEvaluacion);
+                    } catch (Exception e) {
+                        System.out.println("ERROR TIPO: " + e.getMessage());
+                    }
+                    //Postfijo
+                    try {
+                        postfijo = postfijo(proposicion);
+                        etPostfijo.setText(postfijo);
+                        System.out.println("POSTFIJO: " + postfijo);
+                    } catch (IOException e) {
+                        System.out.println("ERROR POSTFIJO: " + e.getMessage());
+                    }
                 }
 
             }
