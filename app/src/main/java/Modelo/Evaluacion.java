@@ -23,10 +23,11 @@ public class Evaluacion {
     public static ArrayList<ArrayList> arrayTabla = new ArrayList<>();
 
     /**
-     Método para iniciar la evaluación, convierte una cadena con la proposición en postfijo,
-     después se manda cada caracter a un ArrayList, y las variables se sustituyen por ArrayLists
-     @param proposicion
-      * @throws java.io.IOException
+     * Método para iniciar la evaluación, convierte una cadena con la proposición en postfijo,
+     * después se manda cada caracter a un ArrayList, y las variables se sustituyen por ArrayLists
+     *
+     * @param proposicion
+     * @throws java.io.IOException
      */
     public static void evaluacionIniciar(String proposicion) throws IOException {
         columna.clear();
@@ -96,8 +97,9 @@ public class Evaluacion {
     }
 
     /**
-     Método para evaluar en su totalidad la proposición
-     @param prop
+     * Método para evaluar en su totalidad la proposición
+     *
+     * @param prop
      */
     private static void evaluacionTotal(ArrayList<Object> prop) {
         for (int i = 0; i < prop.size(); i++) {
@@ -144,11 +146,12 @@ public class Evaluacion {
     }
 
     /**
-     Método para evaluar variables con operadores
-     @param op
-     @param x
-     @param y
-     @return
+     * Método para evaluar variables con operadores
+     *
+     * @param op
+     * @param x
+     * @param y
+     * @return
      */
     private static ArrayList<Character> evaluacionOperador(char op, ArrayList<Character> x, ArrayList<Character> y) {
         ArrayList<Character> temp = new ArrayList<>();
@@ -173,8 +176,9 @@ public class Evaluacion {
     }
 
     /**
-     Método para evaluar si ArrayList final es tautología, falacia/contradicción o contingencia
-     @return
+     * Método para evaluar si ArrayList final es tautología, falacia/contradicción o contingencia
+     *
+     * @return
      */
     public static String evaluacionTipo() {
         ArrayList<Character> arr = arrayTabla.get(arrayTabla.size() - 1);
@@ -197,9 +201,10 @@ public class Evaluacion {
     }
 
     /**
-     Método para contar el número de variables (PQRSTU) y crear los arreglos correspondientes
-     @param proposicion
-     @return
+     * Método para contar el número de variables (PQRSTU) y crear los arreglos correspondientes
+     *
+     * @param proposicion
+     * @return
      */
     public static int contarVariables(String proposicion) {
         String prop = proposicion.replaceAll("[^A-Ua-uW-Zw-z]", "");

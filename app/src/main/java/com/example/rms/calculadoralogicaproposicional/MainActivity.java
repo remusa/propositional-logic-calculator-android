@@ -7,12 +7,16 @@ import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import Modelo.Evaluacion;
 
@@ -46,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
         etTipo = (EditText) findViewById(R.id.etTipo);
         etPostfijo = (EditText) findViewById(R.id.etPostfijo);
         btnEvaluar = (Button) findViewById(R.id.btnEvaluar);
-        tabla = (TableLayout) findViewById(R.id.tabla);
+//        tabla = (TableLayout) findViewById(R.id.tabla);
+        final ListView lvLista = (ListView) findViewById(R.id.lista);
+        ArrayAdapter<String> adaptador;
 
         btnEvaluar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +78,22 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("NOCOLUMNAS: " + noColumnas);
                         System.out.println("NOFILAS: " + noFilas);
                         System.out.println("VECTOR FINAL: " + vectorFinal.toString());
+
+                        ArrayList<String> temp = new ArrayList<String>();
+                        String str = "";
+                        for (ArrayList aux:vectorFinal
+                             ) {
+                            str += aux.toString();
+                            temp.add(str);
+                        }
+                        System.out.println("TEST: " + str);
+
+                        System.out.println("LISTA: "+temp);
+                        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getBaseContext(),
+                                android.R.layout.simple_list_item_1, temp);
+                        System.out.println(adaptador.toString());
+                        lvLista.setAdapter(adaptador);
+
 
 //                        for (int i = 0; i < noColumnas; i++) {
 //

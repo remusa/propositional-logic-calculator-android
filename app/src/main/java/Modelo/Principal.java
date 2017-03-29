@@ -40,7 +40,6 @@ public class Principal {
 
     public static void main(String[] args) throws IOException {
         String proposicion = "(PvQ)^R";
-
         //Tablas
         mostrarTablasVariables(proposicion);
         //Evaluación
