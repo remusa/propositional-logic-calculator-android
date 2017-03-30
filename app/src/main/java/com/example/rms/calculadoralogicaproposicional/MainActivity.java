@@ -7,11 +7,16 @@ import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.Toast;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import Modelo.Evaluacion;
 
@@ -45,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
         etTipo = (EditText) findViewById(R.id.etTipo);
         etPostfijo = (EditText) findViewById(R.id.etPostfijo);
         btnEvaluar = (Button) findViewById(R.id.btnEvaluar);
-        tabla = (TableLayout) findViewById(R.id.tabla);
+//        tabla = (TableLayout) findViewById(R.id.tabla);
+        final ListView lvLista = (ListView) findViewById(R.id.lista);
+        ArrayAdapter<String> adaptador;
 
         btnEvaluar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,19 +77,33 @@ public class MainActivity extends AppCompatActivity {
 
                         System.out.println("NOCOLUMNAS: " + noColumnas);
                         System.out.println("NOFILAS: " + noFilas);
+                        System.out.println("VECTOR FINAL: " + vectorFinal.toString());
 
-
-                        for (int i = 0; i < noColumnas; i++) {
-
+                        ArrayList<String> temp = new ArrayList<String>();
+                        String str = "";
+                        for (ArrayList aux:vectorFinal
+                             ) {
+                            str += aux.toString();
+                            temp.add(str);
                         }
+                        System.out.println("TEST: " + str);
+
+                        System.out.println("LISTA: "+temp);
+                        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getBaseContext(),
+                                android.R.layout.simple_list_item_1, temp);
+                        System.out.println(adaptador.toString());
+                        lvLista.setAdapter(adaptador);
+
+
+//                        for (int i = 0; i < noColumnas; i++) {
+//
+//                        }
 
 //                        for (int i = 0; i < vectorFinal.get(i).size(); i++) {
 //                            for (int j = 0; j < vectorFinal.size(); j++) {
 ////                                TableRow fila = new TableRow(vectorFinal.get(i).get(j));
 //                            }
 //                        }
-
-                        System.out.println("VECTOR FINAL: " + vectorFinal.toString());
                     } catch (IOException e) {
                         System.out.println("ERROR EVALUACIÓN: " + e.getMessage());
                     }
@@ -102,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
                     } catch (IOException e) {
                         System.out.println("ERROR POSTFIJO: " + e.getMessage());
                     }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Ingresa una proposición", Toast.LENGTH_SHORT).show();
                 }
 
             }

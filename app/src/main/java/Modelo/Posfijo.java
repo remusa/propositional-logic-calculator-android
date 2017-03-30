@@ -20,33 +20,6 @@ public class Posfijo {
     ArrayList<String> res;
     public Map<String, Integer> prioridad = new HashMap<>();
 
-    public static void main(String[] args) throws IOException {
-        ArrayList<String> res1 = new ArrayList();
-        String prueba1 = "(P→Q^-R)↔((-P^-S)^R↔(P^-Q))^R→S";
-//        String prueba1 = "((P→Q)^(P→R))→(P→R)";    //PQ→PR→^PR→→
-        String prb1[] = prueba1.split("");
-        res1.addAll(Arrays.asList(prb1));
-        Posfijo p1 = new Posfijo(res1);
-        res1 = p1.getPosfijo();
-        System.out.println("Prueba 1: " + prueba1 + "\nPostfijo 1: " + res1 + "\n");
-
-        ArrayList<String> res2 = new ArrayList();
-        String prueba2 = "(P^Q)↔(-Qv-P)";
-        String prb2[] = prueba2.split("");
-        res2.addAll(Arrays.asList(prb2));
-        Posfijo p2 = new Posfijo(res2);
-        res2 = p2.getPosfijo();
-        System.out.println("Prueba 2: " + prueba2 + "\nPostfijo 2: " + res2 + "\n");
-
-        ArrayList<String> res3 = new ArrayList();
-        String prueba3 = "((P→Q)^(Q^P))↔(P↔Q)";
-        String prb3[] = prueba3.split("");
-        res3.addAll(Arrays.asList(prb3));
-        Posfijo p3 = new Posfijo(res3);
-        res3 = p3.getPosfijo();
-        System.out.println("Prueba 3: " + prueba3 + "\nPostfijo 3: " + res3 + "\n");
-    }
-
     /**
      * @param lexema
      * @throws java.io.IOException
