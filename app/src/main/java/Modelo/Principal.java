@@ -38,20 +38,6 @@ public class Principal {
     private static ArrayList<Character> varT = new ArrayList<>();
     private static ArrayList<Character> varU = new ArrayList<>();
 
-    public static void main(String[] args) throws IOException {
-        String proposicion = "(PvQ)^R";
-        //Tablas
-        mostrarTablasVariables(proposicion);
-        //Evaluación
-        Evaluacion.evaluacionIniciar(proposicion);
-        //Postfijo
-        String postfijo = postfijo(proposicion);
-        System.out.println("Postfijo: " + postfijo);
-        //Tipo de evaluación
-        String tipoEvaluacion = Evaluacion.evaluacionTipo();
-        System.out.println("Tipo de evaluación: " + tipoEvaluacion);
-    }
-
     /**
      * Método para mostrar las tablas
      *
